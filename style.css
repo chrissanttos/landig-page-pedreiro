@@ -1,90 +1,142 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-:root{
-    --fundo:#f8b400;
-    --sombra:#6B5E53;
 
+:root {
+    --fundo: #FFFAF0; /* cor de fundo bem clara, estilo a da imagem */
+    --laranja: #DA591A;
+    --sombra: #6B5E53;
     --font: "Poppins", sans-serif;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+
+body {
     font-family: var(--font);
-    
+    background-color: var(--fundo);
+    color: #333;
+    overflow-y: hidden;
 }
 
-
-
-.hero-banner{
+/* Cabeçalho */
+.hero-banner {
     width: 90%;
     margin: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px;
-
+    height: 100px;
 }
 
-.hero-banner .logo img{ 
+.hero-banner .logo img {
     padding-top: 20px;
-    width:100px;
+    width: 100px;
 }
 
-
-
-.hero-banner ul{
-    display:flex ;
+.hero-banner ul {
+    display: flex;
     list-style: none;
-    
+    gap: 30px; /* espaçamento entre os links */
 }
 
-.hero-banner ul a{
+.hero-banner ul a {
     text-decoration: none;
-    padding: 0 10px ;
-    font-size: 1.3em;
-    transition: all 0.5s;
+    font-size: 1.2em;
     color: black;
+    font-weight: 500;
+    transition: 0.3s;
 }
 
-a:hover{
-    color: black;
-    font-weight: bold;
+.hero-banner ul a:hover {
+    color: #DA591A;
 }
 
-.linha{
-    border-top: 1px solid rgba(0, 0, 0, 0.179);
+.linha {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.container{
+/* Conteúdo Principal */
+.container {
     width: 90%;
     margin: auto;
     padding-top: 50px;
 }
-.pricp-container{
+
+.pricp-container {
     display: flex;
+    align-items: center;
+    gap: 40px; /* distância entre texto e imagem */
+    justify-content: center; /* AGRUPA os dois no centro, e não nas bordas */
+
 }
 
+.text-pricp {
+    max-width: 500px;
+}
 
-
-.text-pricp .title{
-    font-weight: 500;
+.text-pricp .title {
+    font-weight: 800;
     font-size: 5em;
     line-height: 1.1;
+    margin-bottom: 10px;
+}
+span{
+    display: flex;
+    justify-content: center;
+    margin-right: 125px;
 }
 
-.text-pricp  .sub-title{
-    padding: 10px;
-    font-size: 2em;
-    font-weight: 400;
+.text-pricp .sub-title {
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 20px;
 }
 
-.text-pricp p{
-    font-size: 1.2em;
-    width: 70%;
-    padding: 0 0 10px 10px;
+.text-pricp p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+}
+
+/* Botão */
+.btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #DA591A, #c14f18); /* gradiente laranja bonito */
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 15px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1em;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* sombra para o botão levantar */
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: linear-gradient(135deg, #c14f18, #DA591A); /* inverte o gradiente no hover */
+    text-decoration: none;
+    transform: scale(1.05); /* efeito de crescimento suave */
+}
+
+/* Imagem principal */
+.container img {
+    max-width: 44%;
+    height: auto;          /* remove qualquer espaçamento extra */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .pricp-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .text-pricp {
+        margin-bottom: 30px;
+    }
 }
